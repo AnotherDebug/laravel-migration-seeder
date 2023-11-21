@@ -22,18 +22,20 @@
                 </thead>
                 <tbody>
 
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                    </tr>
+                    @foreach ($trains as $train)
+                        <tr>
+                            <th scope="row">{{$train->id}}</th>
+                            <td>{{$train->azienda}}</td>
+                            <td>{{$train->stazione_partenza}}</td>
+                            <td>{{$train->stazione_arrivo}}</td>
+                            <td>{{$train->orario_partenza}}</td>
+                            <td>{{$train->orario_arrivo}}</td>
+                            <td>{{$train->codice_treno}}</td>
+                            <td>{{$train->numero_carrozze}}</td>
+                            <td>{{$train->is_delayed ? 'Si' : 'No'}}</td>
+                            <td>{{$train->is_deleted ? 'Si' : 'No'}}</td>
+                        </tr>
+                    @endforeach
 
                 </tbody>
             </table>
